@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Modules/Companies.js"></script>
+    <script src="Scripts/ProgressBar.js"></script>
 
     <title></title>
     <link href="Style/Site.css" rel="stylesheet" type="text/css" />
@@ -25,13 +27,6 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <div class="navbar-link">
-                            <a href="../Home.html">
-                                Main
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="navbar-link">
                             <a href="../UsersPage.html">
                                 Users
                             </a>
@@ -49,28 +44,62 @@
         </div>
     </div>
 
-    <div ng-app="Companies" class="container body-content">
+    <div class="container body-content">
 
-        <script src="Modules/Companies.js"></script>
+        <div ng-app="Companies">
+            <div  ng-controller="CompaniesController">
+                <div id="progress-bar" ng-hide="load">
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="opacity:{{opacity1}};">
+                                    <img src="Images/square.png" />
+                                </div>
+                            </td>
+                            <td>
+                                <div style="opacity:{{opacity2}};">
+                                    <img src="Images/square.png" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="opacity:{{opacity3}};">
+                                    <img src="Images/square.png" />
+                                </div>
 
-        <div ng-controller="CompaniesController">
-            <table>
-                <tr>
-                    <td>ID</td>
-                    <td>Name</td>
-                </tr>
+                            </td>
+                            <td>
+                                <div style="opacity:{{opacity4}};">
+                                    <img src="Images/square.png" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
 
-                <tr ng-repeat="company in Companies">
-                    <td><div style="margin-right: 30px;">{{company.Id}}</div></td>
-                    <td><form ng-submit="submit_put(company)"><input type="text" ng-model="company.Name" /></form></td>
-                    <td><input ng-click="delete(company)" type="button" /></td>
-                </tr>
+                <div ng-hide="!load">
+                    <table>
+                        <tr>
+                            <td>ID</td>
+                            <td>Name</td>
+                        </tr>
 
-                <tr>
-                    <td></td>
-                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewCompany.Name" /></form></td>
-                </tr>
-            </table>
+                        <tr ng-repeat="company in Companies">
+                            <td><div style="margin-right: 30px;">{{company.Id}}</div></td>
+                            <td><form ng-submit="submit_put(company)"><input type="text" ng-model="company.Name" /></form></td>
+                            <td><a ng-click="delete(company)"><img width="32" height="32" src="Images/delete.png" /></a></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td><form ng-submit="submit_post()"><input type="text" ng-model="NewCompany.Name" /></form></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
         </div>
     </div>
 

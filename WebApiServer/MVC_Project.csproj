@@ -203,7 +203,8 @@
     <Content Include="CompaniesPage.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Home.html" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\square.png" />
     <Content Include="Models\Company.js" />
     <Content Include="Models\User.js" />
     <Content Include="Modules\Companies.js" />

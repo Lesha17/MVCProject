@@ -23,13 +23,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <div class="navbar-link">
-                            <a href="../Home.html">
-                                Main
-                            </a>
-                        </div>
-                    </li>
+                    
                     <li>
                         <div class="navbar-link">
                             <a href="../UsersPage.html">
@@ -53,35 +47,69 @@
         <script src="Modules/Users.js"></script>
 
         <div ng-controller="UsersController">
-            <table>
-                <tr>
-                    <td>ID</td>
-                    <td>Name</td>
-                    <td>Login</td>
-                    <td>Password</td>
-                    <td>Company</td>
-                    <td>Status</td>
-                </tr>
+            <div id="progress-bar" ng-hide="load">
+                <table>
+                    <tr>
+                        <td>
+                            <div style="opacity:{{opacity1}};">
+                                <img src="Images/square.png" />
+                            </div>
+                        </td>
+                        <td>
+                            <div style="opacity:{{opacity2}};">
+                                <img src="Images/square.png" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="opacity:{{opacity3}};">
+                                <img src="Images/square.png" />
+                            </div>
 
-                <tr ng-repeat="user in Users">
-                    <td><div style="margin-right: 30px;">{{user.Id}}</div></td>
-                    <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.Name" /></form></td>
-                    <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.Login" /></form></td>
-                    <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.Password" /></form></td>
-                    <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.CompanyID" /></form></td>
-                    <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.ContractStatus" /></form></td>
-                    <td><input ng-click="delete(user)" type="button"/></td>
-                </tr>
+                        </td>
+                        <td>
+                            <div style="opacity:{{opacity4}};">
+                                <img src="Images/square.png" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
-                <tr>
-                    <td></td>
-                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.Name" /></form></td>
-                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.Login" /></form></td>
-                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.Password" /></form></td>
-                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.CompanyID" /></form></td>
-                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.ContractStatus" /></form></td>
-                </tr>
-            </table>
+            <div ng-hide="!load">
+                <table>
+                    <tr>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <td>Login</td>
+                        <td>Password</td>
+                        <td>Company</td>
+                        <td>Status</td>
+                    </tr>
+
+                    <tr ng-repeat="user in Users">
+                        <td><div style="margin-right: 30px;">{{user.Id}}</div></td>
+                        <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.Name" /></form></td>
+                        <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.Login" /></form></td>
+                        <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.Password" /></form></td>
+                        <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.CompanyID" /></form></td>
+                        <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.ContractStatus" /></form></td>
+                        <td><a ng-click="delete(user)"><img height="32" width="32" src="Images/delete.png" /></a></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.Name" /></form></td>
+                        <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.Login" /></form></td>
+                        <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.Password" /></form></td>
+                        <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.CompanyID" /></form></td>
+                        <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.ContractStatus" /></form></td>
+                    </tr>
+                </table>
+
+                <div ng-></div>
+            </div>
         </div>
     </div>
 

@@ -34,6 +34,29 @@ a{
     margin-left:20px;
     margin-right:20px;
 }
+
+#progress-bar{
+    width: 132px;
+    height: 132px;
+    position: absolute;
+    margin-left: -66px;
+    margin-top: -66px;
+    top: 50%;
+    left: 50%;
+}
+
+.progress-bar-little{
+    width: 32px;
+    height:32px;
+}
+
+.progress-bar-little image{
+    max-width: 100%;
+    width:15px;
+    height:15px;
+    overflow:hidden;
+    background-size:cover;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

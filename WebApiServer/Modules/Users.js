@@ -2,16 +2,31 @@
 
 users.constant('address', 'http://localhost:56424/api/Users');
 
-users.controller("UsersController", function ($scope, $http, address) {
+users.controller("UsersController", function ($scope, $interval, $http, address) {
+    $scope.opacity1 = 0.8;
+    $scope.opacity2 = 0.6;
+    $scope.opacity3 = 0.2;
+    $scope.opacity4 = 0.0;
+
+    var stop = $interval(function () {
+        $scope.opacity1 = ($scope.opacity1 + 0.2) % 0.8;
+        $scope.opacity2 = ($scope.opacity2 + 0.2) % 0.8;
+        $scope.opacity3 = ($scope.opacity3 + 0.2) % 0.8;
+        $scope.opacity4 = ($scope.opacity4 + 0.2) % 0.8;
+    }, 120);
+
+    $scope.load = false;
+
     $http.get(address)
 .success(function (data, status, headers, config) {
     $scope.Users = data;
+    $scope.load = true;
 })
     .error(function (data, status, headers, config) {
         alert('error');
     });
     $scope.submit_put = function ($user) {
-        alert(address + '/' + $user.Id);
+        
         $http.put(address + '/' + $user.Id, $user)
         .success(function (data, status, headers, config) {
             
