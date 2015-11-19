@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+
+    <title></title>
+    <link href="Style/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Style/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="Style/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div class="navbar-link">
+                            <a href="../Home.html">
+                                Main
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="navbar-link">
+                            <a href="../UsersPage.html">
+                                Users
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="navbar-link">
+                            <a href="../CompaniesPage.html">
+                                Companies
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div ng-app="Companies" class="container body-content">
+        <script src="Modules/Companies.js"></script>
+
+        <div ng-controller="CompaniesController">
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                </tr>
+
+                <tr ng-repeat="company in Companies">
+                    <td><input type="text" ng-model="company.Id" /></td>
+                    <td><input type="text" ng-model="company.Name" /></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+</html>

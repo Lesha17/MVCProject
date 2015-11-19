@@ -14,7 +14,6 @@ using System.Web.Http.Cors;
 
 namespace WebApiServer.Controllers
 {
-    [EnableCors("*", "*", "*")]
     public class UsersController : ApiController
     {
         private UserCompanyContext db = new UserCompanyContext();

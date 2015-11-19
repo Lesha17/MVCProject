@@ -200,8 +200,21 @@
     <Content Include="App_Data\UserCompanyDatabase_log.ldf">
       <DependentUpon>UserCompanyDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="CompaniesPage.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Home.html" />
+    <Content Include="Models\Company.js" />
+    <Content Include="Models\User.js" />
+    <Content Include="Modules\Companies.js" />
+    <Content Include="Modules\Users.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Style\bootstrap.css" />
+    <Content Include="Style\bootstrap.min.css" />
+    <Content Include="Style\Site.css" />
+    <Content Include="UsersPage.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -216,6 +229,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+    <Content Include="Scripts\angular.min.js.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
