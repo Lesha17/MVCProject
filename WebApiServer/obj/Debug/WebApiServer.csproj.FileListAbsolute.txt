@@ -152,3 +152,6 @@ C:\Users\HP\Documents\Visual Studio 2015\Projects\MVCProject\WebApiServer\bin\Sy
 C:\Users\HP\Documents\Visual Studio 2015\Projects\MVCProject\WebApiServer\obj\Debug\WebApiServer.csprojResolveAssemblyReference.cache
 C:\Users\HP\Documents\Visual Studio 2015\Projects\MVCProject\WebApiServer\obj\Debug\WebApiServer.dll
 C:\Users\HP\Documents\Visual Studio 2015\Projects\MVCProject\WebApiServer\obj\Debug\WebApiServer.pdb
+C:\Users\HP\Documents\Visual Studio 2015\Projects\MVCProject\WebApiServer\bin\System.Web.Cors.dll
+C:\Users\HP\Documents\Visual Studio 2015\Projects\MVCProject\WebApiServer\bin\System.Web.Http.Cors.dll
+C:\Users\HP\Documents\Visual Studio 2015\Projects\MVCProject\WebApiServer\bin\System.Web.Http.Cors.xml

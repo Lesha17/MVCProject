@@ -10,9 +10,11 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApiServer.Models;
+using System.Web.Http.Cors;
 
 namespace WebApiServer.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class UsersController : ApiController
     {
         private UserCompanyContext db = new UserCompanyContext();
@@ -21,6 +23,7 @@ namespace WebApiServer.Controllers
         * READ
         */
         // GET: api/Users
+        
         [HttpGet]
         public IQueryable<User> GetUsers()
         {
