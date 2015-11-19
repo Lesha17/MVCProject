@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
 
     <title></title>
     <link href="Style/Site.css" rel="stylesheet" type="text/css" />
@@ -49,7 +48,9 @@
             </div>
         </div>
     </div>
+
     <div ng-app="Companies" class="container body-content">
+
         <script src="Modules/Companies.js"></script>
 
         <div ng-controller="CompaniesController">
@@ -60,13 +61,18 @@
                 </tr>
 
                 <tr ng-repeat="company in Companies">
-                    <td><input type="text" ng-model="company.Id" /></td>
-                    <td><input type="text" ng-model="company.Name" /></td>
+                    <td><div style="margin-right: 30px;">{{company.Id}}</div></td>
+                    <td><form ng-submit="submit_put(company)"><input type="text" ng-model="company.Name" /></form></td>
+                    <td><input ng-click="delete(company)" type="button" /></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewCompany.Name" /></form></td>
                 </tr>
             </table>
         </div>
     </div>
-
 
 </body>
 </html>

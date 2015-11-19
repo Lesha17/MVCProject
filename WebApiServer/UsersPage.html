@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
 
     <title></title>
     <link href="Style/Site.css" rel="stylesheet" type="text/css" />
@@ -65,12 +64,22 @@
                 </tr>
 
                 <tr ng-repeat="user in Users">
-                    <td><input type="text" ng-model="user.Id" /></td>
-                    <td><input type="text" ng-model="user.Name" /></td>
-                    <td><input type="text" ng-model="user.Login" /></td>
-                    <td><input type="text" ng-model="user.Password" /></td>
-                    <td><input type="text" ng-model="user.CompanyID" /></td>
-                    <td><input type="text" ng-model="user.ContractStatus" /></td>
+                    <td><div style="margin-right: 30px;">{{user.Id}}</div></td>
+                    <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.Name" /></form></td>
+                    <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.Login" /></form></td>
+                    <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.Password" /></form></td>
+                    <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.CompanyID" /></form></td>
+                    <td><form ng-submit="submit_put(user)"><input type="text" ng-model="user.ContractStatus" /></form></td>
+                    <td><input ng-click="delete(user)" type="button"/></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.Name" /></form></td>
+                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.Login" /></form></td>
+                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.Password" /></form></td>
+                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.CompanyID" /></form></td>
+                    <td><form ng-submit="submit_post()"><input type="text" ng-model="NewUser.ContractStatus" /></form></td>
                 </tr>
             </table>
         </div>
